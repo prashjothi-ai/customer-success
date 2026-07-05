@@ -34,12 +34,3 @@ Try prompts like:
 - "Give me a health check on Acme Corp before the QBR" (should trigger `account-health-summary`)
 
 Run `/reload-plugins` after editing SKILL.md files to pick up changes without restarting.
-
-## Getting this into the official Anthropic marketplace
-
-The official directory lives at `anthropics/claude-plugins-official` on GitHub. To submit:
-
-1. **Host this plugin in your own public GitHub repo** — the marketplace lists external plugins by pointing at your repo, it doesn't host the code itself.
-2. **Meet the quality/security bar**: clear README, no destructive or write actions without explicit confirmation, no hardcoded secrets, works as advertised.
-3. **Submit via the official form**: https://clau.de/plugin-directory-submission
-4. Anthropic reviews external submissions before listing them in `/external_plugins`.
