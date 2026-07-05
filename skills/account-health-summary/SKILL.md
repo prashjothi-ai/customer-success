@@ -1,6 +1,6 @@
 ---
 name: account-health-summary
-description: Produces a synthesized account health summary for a customer by pulling whatever CRM, support, product-usage, call-intelligence, and customer-health data sources are connected — regardless of which specific vendors (Salesforce, HubSpot, Zendesk, Intercom, Gainsight, Totango, Gong, Chorus, Amplitude, Hex, etc.) the CSM uses. Use this whenever the user asks for an account status, health check, QBR prep, renewal risk assessment, or "what's going on with [customer]" — even if they only name the account and don't specify which systems to check.
+description: Produces a synthesized account health summary for a customer by pulling whatever CRM, support, product-usage, call-intelligence, and customer-health data sources are connected — regardless of which specific vendors (Salesforce, HubSpot, Zendesk, Intercom, Gainsight, Totango, Gong, Chorus, Amplitude, Hex, etc.) the CSM uses. Make sure to use this skill whenever the user asks for an account status, health check, QBR prep, renewal risk assessment, "what's going on with [customer]", or names any specific customer/account and asks a question about them — even if they only name the account and don't specify which systems to check or use the words "health" or "summary."
 ---
 
 # Account Health Summary
