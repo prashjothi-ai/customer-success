@@ -1,0 +1,10 @@
+{
+  "name": "cs-toolkit",
+  "description": "Customer success toolkit: answers questions from whatever docs/wiki/help-center you use, and produces account health summaries from whatever CRM, ticketing, analytics, and call-intelligence tools you have connected. Vendor-agnostic — works with Salesforce or HubSpot, Zendesk or Intercom, Gong or Chorus, etc.",
+  "version": "0.1.0",
+  "category": "customer-success",
+  "author": {
+    "name": "Prash"
+  },
+  "homepage": "https://github.com/YOUR_GITHUB_USERNAME/cs-toolkit"
+}

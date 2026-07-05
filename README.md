@@ -1,0 +1,52 @@
+# cs-toolkit
+
+A Claude Code plugin for customer success work, designed to work regardless of which specific CRM, ticketing, analytics, or call-intelligence tools your team uses.
+
+## What's included
+
+- **`kb-answer`** — answers product/policy questions by searching whatever docs source you have connected (Notion, Confluence, Google Drive, Zendesk/Intercom help center), with a fallback path for teams with a custom retrieval pipeline.
+- **`account-health-summary`** — pulls account signals across five categories (CRM, support tickets, customer health platform, product usage, call intelligence) from *whatever tools are actually connected*, and clearly states which categories were and weren't available for a given run.
+
+## Why vendor-agnostic
+
+CS tool stacks vary a lot team to team (Salesforce vs. HubSpot, Zendesk vs. Intercom, Gainsight vs. Totango, Gong vs. Chorus...). A plugin hardcoded to one specific combination only works for teams using that exact stack. This one instead:
+
+- Thinks in **data categories**, not vendor names
+- Checks what's actually connected each session rather than assuming
+- **Degrades gracefully** — a CSM with only 2 of 5 categories connected still gets a useful, honestly-labeled partial summary instead of an error
+
+## Setup
+
+This plugin doesn't bundle its own MCP servers. Instead, connect whatever CRM/ticketing/docs/analytics/call-intelligence MCP servers you already use via Claude Code's `/plugin` or MCP settings — the skills will detect and use them automatically. No `.mcp.json` editing required.
+
+If you want `kb-answer` to use a custom vector search index instead of (or alongside) a docs tool, see `skills/kb-answer/references/setup.md` and `skills/kb-answer/scripts/query_kb.py`.
+
+## Test it locally
+
+From the parent directory of `cs-toolkit/`:
+
+```bash
+claude --plugin-dir ./cs-toolkit
+```
+
+Try prompts like:
+- "How does SSO provisioning work?" (should trigger `kb-answer`)
+- "Give me a health check on Acme Corp before the QBR" (should trigger `account-health-summary`)
+
+Run `/reload-plugins` after editing SKILL.md files to pick up changes without restarting.
+
+## Getting this into the official Anthropic marketplace
+
+The official directory lives at `anthropics/claude-plugins-official` on GitHub. To submit:
+
+1. **Host this plugin in your own public GitHub repo** — the marketplace lists external plugins by pointing at your repo, it doesn't host the code itself.
+2. **Meet the quality/security bar**: clear README, no destructive or write actions without explicit confirmation, no hardcoded secrets, works as advertised.
+3. **Submit via the official form**: https://clau.de/plugin-directory-submission
+4. Anthropic reviews external submissions before listing them in `/external_plugins`.
+
+### Before submitting, worth doing
+
+- [ ] Test with at least 2-3 different tool-stack combinations (not just your own Notion + Salesforce setup) to confirm the graceful-degradation behavior actually holds up
+- [ ] Fill in `plugin.json`'s `homepage` field with your real repo URL
+- [ ] Add a LICENSE file (the official marketplace is Apache-2.0; match or pick a compatible permissive license)
+- [ ] Get 2-3 other CSMs (ideally at different companies) to trial it and report where it breaks
