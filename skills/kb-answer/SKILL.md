@@ -1,6 +1,6 @@
 ---
 name: kb-answer
-description: Answers customer or internal questions by searching whatever knowledge sources are connected — Notion, Confluence, Google Drive, a Zendesk/Intercom help center, or a custom vector index — and generating a grounded, cited answer. Use this whenever the user asks a product question, asks "how do I...", asks you to draft a customer-facing answer, or asks you to look something up in the knowledge base — even if they don't say "knowledge base" explicitly (e.g. "what's our policy on X", "how does feature Y work", "find the doc on Z").
+description: Answers customer or internal questions by searching whatever knowledge sources are connected — Notion, Confluence, Google Drive, a Zendesk/Intercom help center, or a custom vector index — and generating a grounded, cited answer. Make sure to use this skill whenever the user asks any product, feature, or "how does X work" question, asks about a policy or process, asks you to draft a customer-facing answer, or asks you to look something up — even if they don't mention "knowledge base," "docs," or any tool by name. Default to using this skill for any factual question about how a product or process works, rather than answering from general knowledge, since the user's own docs are almost always more accurate than general training knowledge for their specific product/company.
 ---
 
 # KB Answer
