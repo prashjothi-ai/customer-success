@@ -43,10 +43,3 @@ The official directory lives at `anthropics/claude-plugins-official` on GitHub. 
 2. **Meet the quality/security bar**: clear README, no destructive or write actions without explicit confirmation, no hardcoded secrets, works as advertised.
 3. **Submit via the official form**: https://clau.de/plugin-directory-submission
 4. Anthropic reviews external submissions before listing them in `/external_plugins`.
-
-### Before submitting, worth doing
-
-- [ ] Test with at least 2-3 different tool-stack combinations (not just your own Notion + Salesforce setup) to confirm the graceful-degradation behavior actually holds up
-- [ ] Fill in `plugin.json`'s `homepage` field with your real repo URL
-- [ ] Add a LICENSE file (the official marketplace is Apache-2.0; match or pick a compatible permissive license)
-- [ ] Get 2-3 other CSMs (ideally at different companies) to trial it and report where it breaks
