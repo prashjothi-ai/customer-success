@@ -21,6 +21,10 @@ This plugin doesn't bundle its own MCP servers. Instead, connect whatever CRM/ti
 
 If you want `kb-answer` to use a custom vector search index instead of (or alongside) a docs tool, see `skills/kb-answer/references/setup.md` and `skills/kb-answer/scripts/query_kb.py`.
 
+### Known limitation: direct tool use vs. skill invocation
+
+Once a docs tool (e.g. Notion) is actually connected, Claude sometimes answers a question by calling that MCP tool directly instead of routing through the `kb-answer` skill — most often for phrasings that read as a direct lookup ("tell me about X") rather than a question needing synthesis ("how does X work?"). When this happens, the underlying answer is usually still accurate since it's genuinely pulling from the connected source, but the skill's extra guarantees (retrieval-quality checks, disciplined paraphrasing, explicit source labeling) don't apply, since Claude bypassed the skill wrapper entirely. This is a known behavior of how Claude decides between using a skill and using a tool directly, not a bug specific to this plugin. If it matters for your use case, explicitly asking Claude to "use the kb-answer skill" reliably routes through it.
+
 ## Test it locally
 
 From the parent directory of `cs-toolkit/`:
